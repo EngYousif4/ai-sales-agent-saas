@@ -1,20 +1,38 @@
-# مبيعاتي AI — AI Sales Employee
+# AI Sales Agent SaaS
 
-## تشغيل محلي
+## Stack
+- React + TypeScript + Vite
+- RTL Arabic / English UI
+- Demo chat with real database-backed logic in the frontend simulation
+- Multi-tenant store model
+- Role-based permissions and tenant scoping
+
+## Getting started
 ```bash
 npm install
 npm run dev
 ```
 
-## ما تم بناؤه في هذه المرحلة
-- لوحة SaaS عربية RTL متجاوبة لمتجر Demo Fashion Store.
-- Demo Chat حقيقي داخل التطبيق، يستخدم كتالوج المنتجات والمخزون والأسعار وإعداد التوصيل.
-- إنشاء طلب فعلي في `localStorage` بعد تأكيد العميل، ويظهر في صفحة الطلبات.
-- سياسة عدم الاختلاق: ردود المنتجات والأسعار والمخزون والتوصيل مبنية على بيانات الكتالوج فقط.
-- أداة اكتشاف اللغة `detectLanguage()` تدعم العربية والعربية العراقية، Arabizi/Latin، English، Español، Français، Türkçe، Deutsch، हिन्दी، مع رد الوكيل بنفس لغة الزبون عند توفرها.
-- تحويل المحادثة للإنسان عند طلبه أو عند وجود شكوى/استرجاع.
+## Included in this version
+- Landing page with AI sales employee positioning
+- Login/register flow
+- Store owner dashboard
+- Demo chat with language detection
+- Orders, customers, products, conversations views
+- No-hallucination product logic
+- Tenant-aware permission layer
+- SQL schema for production relational database
 
-> Demo Chat موسوم بوضوح، ولا يدّعي اتصال Instagram أو WhatsApp. طبقة التكاملات الخارجية ستضاف لاحقاً عبر ChannelAdapter بعد توفير مفاتيح حقيقية.
+## AI behavior rules
+- Never invent prices, stock, delivery fees, or order states
+- Use live product data only
+- Detect client language automatically
+- Route complex issues to a human agent
+- Demo mode is clearly separated from external messaging accounts
 
-## الخطوة التالية للإنتاج
-إضافة API/قاعدة PostgreSQL ومصادقة خادمية وRLS لكل `store_id`، وربط مزود LLM بخادم الأدوات فقط، ثم تفعيل adapters للقنوات الخارجية بعد OAuth/webhook حقيقي.
+## Next production steps
+- Connect PostgreSQL
+- Implement auth with encrypted password hashes
+- Add server-side permission enforcement with RLS checks
+- Add channel adapters for WhatsApp, Instagram, Telegram, Messenger
+- Add webhook ingestion and message sync for real integrations

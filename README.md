@@ -1,2 +1,20 @@
-# ai-sales-agent-saas
-AI sales agent platform for e-commerce stores with multi-tenant dashboard and demo chat
+# مبيعاتي AI — AI Sales Employee
+
+## تشغيل محلي
+```bash
+npm install
+npm run dev
+```
+
+## ما تم بناؤه في هذه المرحلة
+- لوحة SaaS عربية RTL متجاوبة لمتجر Demo Fashion Store.
+- Demo Chat حقيقي داخل التطبيق، يستخدم كتالوج المنتجات والمخزون والأسعار وإعداد التوصيل.
+- إنشاء طلب فعلي في `localStorage` بعد تأكيد العميل، ويظهر في صفحة الطلبات.
+- سياسة عدم الاختلاق: ردود المنتجات والأسعار والمخزون والتوصيل مبنية على بيانات الكتالوج فقط.
+- أداة اكتشاف اللغة `detectLanguage()` تدعم العربية والعربية العراقية، Arabizi/Latin، English، Español، Français، Türkçe، Deutsch، हिन्दी، مع رد الوكيل بنفس لغة الزبون عند توفرها.
+- تحويل المحادثة للإنسان عند طلبه أو عند وجود شكوى/استرجاع.
+
+> Demo Chat موسوم بوضوح، ولا يدّعي اتصال Instagram أو WhatsApp. طبقة التكاملات الخارجية ستضاف لاحقاً عبر ChannelAdapter بعد توفير مفاتيح حقيقية.
+
+## الخطوة التالية للإنتاج
+إضافة API/قاعدة PostgreSQL ومصادقة خادمية وRLS لكل `store_id`، وربط مزود LLM بخادم الأدوات فقط، ثم تفعيل adapters للقنوات الخارجية بعد OAuth/webhook حقيقي.
